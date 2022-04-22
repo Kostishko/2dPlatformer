@@ -11,14 +11,23 @@ public class Unit : MonoBehaviour
     private UnitState currentState;
     public void Start()
     {
+        
         TryGetComponent<Animator>(out animator);
         TryGetComponent<Rigidbody2D>(out rb);
+
+        InitParts();
         
         foreach (UnitState item in animator.GetBehaviours<UnitState>())
         {
         //unitStates.Add(item);
         item.InitState(this);
         }       
+
+
+    }
+    
+    public virtual void InitParts ()
+    {
 
     }
 

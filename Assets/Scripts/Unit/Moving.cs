@@ -17,7 +17,7 @@ public class Moving : Part
 
     public void Move (float dir)
 {
-    parent.transform.position = Vector2.MoveTowards(parent.transform.position, parent.transform.right*dir, 5*Time.deltaTime);
+    parent.transform.position =  parent.transform.right*dir* 5*Time.deltaTime;
 }
 
 
