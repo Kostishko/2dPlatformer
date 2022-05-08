@@ -16,10 +16,9 @@ public class MovingState : UnitState
 
     public override void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        Debug.Log(character);
-        Debug.Log(character.Moving);
-        Debug.Log(animator);
+
         character.Moving.Move(animator.GetFloat("Direction"));
+        
         
     }
 

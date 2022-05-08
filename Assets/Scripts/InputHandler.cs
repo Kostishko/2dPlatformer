@@ -10,6 +10,7 @@ public class InputHandler : MonoBehaviour
     // should be created special class with control schem
 #region Commands
 private Command
+doNothing,
 buttonW,
 buttonA,
 buttonS,
@@ -42,6 +43,11 @@ buttonSpace;
         {
             buttonD.Execute();
         }
+
+        else
+        {
+            doNothing.Execute();
+        }
     }
 
 // bad decision, creating new commands classes every init. If it happens only on start - it's ok. But not if we can change character in game
@@ -49,5 +55,6 @@ buttonSpace;
     {
         buttonA = new  MovementLeftCommand(character);
         buttonD = new MovementRightCommand(character);
+        doNothing = new IdleCommand(character);
     }
 }
